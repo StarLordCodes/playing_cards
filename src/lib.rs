@@ -68,3 +68,9 @@ impl PlayingCard {
         }
     }
 }
+
+#[derive(Debug)]
+pub struct PlayingCardsDeck(Vec<PlayingCard>);
+
+#[derive(Debug)]
+pub struct PlayingCardsHand(Vec<PlayingCard>);
