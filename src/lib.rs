@@ -1,3 +1,5 @@
+use rand::Rng;
+
 #[derive(Debug, Clone, PartialEq)]
 pub enum CardSuite {
     SPADE,
@@ -62,9 +64,31 @@ pub struct PlayingCard {
 
 impl PlayingCard {
     pub fn new() -> Self {
+        let suite = rand::thread_rng().gen_range(0..4);
+        let value = rand::thread_rng().gen_range(0..13);
+
         Self {
-            suite: CardSuite::HEART,
-            value: CardValue::KING,
+            suite: match suite {
+                0 => CardSuite::SPADE,
+                1 => CardSuite::HEART,
+                2 => CardSuite::CLOVER,
+                _ => CardSuite::DIAMOND,
+            },
+            value: match value {
+                0 => CardValue::ONE,
+                1 => CardValue::TWO,
+                2 => CardValue::THREE,
+                3 => CardValue::FOUR,
+                4 => CardValue::FIVE,
+                5 => CardValue::SIX,
+                6 => CardValue::SEVEN,
+                7 => CardValue::EIGHT,
+                8 => CardValue::NINE,
+                9 => CardValue::TEN,
+                10 => CardValue::JACK,
+                11 => CardValue::QUEEN,
+                _ => CardValue::KING,
+            },
         }
     }
 }
