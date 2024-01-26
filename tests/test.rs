@@ -4,8 +4,7 @@ use playing_cards::{CardSuite, CardValue, PlayingCard};
 #[test]
 fn test_suite() {
     // test string
-    let suite_str: String = CardSuite::HEART.into();
-    assert_eq!(suite_str, String::from("HEART"));
+    assert_eq!(CardSuite::HEART.to_string(), String::from("HEART"));
 
     // test debug
     assert_eq!(format!("{:?}", CardSuite::CLOVER), "CLOVER");
@@ -14,8 +13,7 @@ fn test_suite() {
 #[test]
 fn test_value() {
     // test string
-    let suite_str: String = CardValue::KING.into();
-    assert_eq!(suite_str, String::from("KING"));
+    assert_eq!(CardValue::KING.to_string(), String::from("KING"));
 
     // test debug
     assert_eq!(format!("{:?}", CardValue::QUEEN), "QUEEN");
@@ -25,9 +23,6 @@ fn test_value() {
 fn test_playing_card_struct() {
     // test playing_card
     let playing_card_new = PlayingCard::new();
-    let playing_card_expected = PlayingCard {
-        suite: CardSuite::HEART,
-        value: CardValue::KING,
-    };
-    assert_eq!(playing_card_expected, playing_card_new);
+    assert_eq!("1", "2");
+    println!("{:?}", playing_card_new);
 }
